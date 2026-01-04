@@ -1,95 +1,177 @@
 "use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const isActive = (path: string) => pathname === path;
+  const items = [
+    { href: "/#ueber-mich", label: "Über Mich" },
+    { href: "/#preise", label: "Preise" },
+    { href: "/#haeufige-fragen", label: "Häufige Fragen" },
+    { href: "/#kontakt", label: "Kontakt" },
+  ] as const;
+
+  useEffect(() => {
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      if (!open) return;
+      const target = e.target as Node | null;
+      if (target && menuRef.current && !menuRef.current.contains(target)) setOpen(false);
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!open) return;
+      if (e.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown, { passive: true });
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   return (
-    <nav className="w-full sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur dark:border-white/10 dark:bg-zinc-950/60">
-      <div className="mx-auto max-w-6xl px-4 min-[851px]:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="text-base font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-              Lelia Hernández
-            </Link>
-          </div>
-          <div className="hidden min-[851px]:ml-6 min-[851px]:flex min-[851px]:space-x-8 items-center">
-            <ThemeToggle className="hidden min-[851px]:inline-flex" />
-            <Link href="/" className={`relative text-sm font-medium transition-colors duration-200 ${isActive('/') ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white'}`}>
-              Startseite
-              {isActive('/') && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-zinc-900 dark:bg-white rounded-full" />}
-            </Link>
-            <Link href="/ueber-mich" className={`relative text-sm font-medium transition-colors duration-200 ${isActive('/ueber-mich') ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white'}`}>
-              Über mich
-              {isActive('/ueber-mich') && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-zinc-900 dark:bg-white rounded-full" />}
-            </Link>
-            <Link href="/kontakt" className={`relative text-sm font-medium transition-colors duration-200 ${isActive('/kontakt') ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white'}`}>
-              Kontakt
-              {isActive('/kontakt') && <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-zinc-900 dark:bg-white rounded-full" />}
-            </Link>
-            <Link href="/kontakt" className="group inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 hover:shadow-md transition-all duration-200 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
-              <span>Probestunde vereinbaren</span>
-              <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-          <div className="-mr-2 flex items-center gap-2 min-[851px]:hidden">
-            <ThemeToggle className="inline-flex" />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className="inline-flex items-center justify-center rounded-full p-2 text-zinc-600 hover:bg-black/5 hover:text-zinc-900 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-zinc-900/30 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white dark:focus:ring-white/20"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              ) : (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
+    <>
+      <div
+        aria-hidden="true"
+        onClick={() => setOpen(false)}
+        className={[
+          "fixed inset-0 z-40 bg-black/35 backdrop-blur-[1px]",
+          "transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+        ].join(" ")}
+      />
 
-      <div 
-        className={`min-[851px]:hidden overflow-hidden transition-all duration-300 ease-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-        id="mobile-menu"
-      >
-          <div className="mx-auto max-w-6xl px-4 pb-4">
-            <div className="mt-2 space-y-1 rounded-2xl bg-white/70 p-2 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-950/60 dark:ring-white/10 shadow-lg">
-            <Link href="/" onClick={() => setIsOpen(false)} className={`block rounded-xl px-3 py-2 text-base font-medium transition-colors ${isActive('/') ? 'bg-black/5 text-zinc-950 dark:bg-white/10 dark:text-white' : 'text-zinc-800 hover:bg-black/5 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white'}`}>
-              Startseite
-            </Link>
-            <Link href="/ueber-mich" onClick={() => setIsOpen(false)} className={`block rounded-xl px-3 py-2 text-base font-medium transition-colors ${isActive('/ueber-mich') ? 'bg-black/5 text-zinc-950 dark:bg-white/10 dark:text-white' : 'text-zinc-800 hover:bg-black/5 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white'}`}>
-              Über mich
-            </Link>
-            <Link href="/kontakt" onClick={() => setIsOpen(false)} className={`block rounded-xl px-3 py-2 text-base font-medium transition-colors ${isActive('/kontakt') ? 'bg-black/5 text-zinc-950 dark:bg-white/10 dark:text-white' : 'text-zinc-800 hover:bg-black/5 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white'}`}>
-              Kontakt
-            </Link>
-            <Link href="/kontakt" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-3 py-2.5 text-base font-semibold text-white hover:bg-zinc-800 transition-colors dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
-              <span>Probestunde vereinbaren</span>
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center items-start pointer-events-none">
+        <div className="w-full flex items-start justify-center pointer-events-auto">
+          {/* Left Bar */}
+          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/90 dark:border-white/10"></div>
+
+          {/* Center Shape */}
+          <div className="relative z-10 flex flex-col items-center">
+              {/* The top part that aligns with side bars (visually merged) */}
+              <div className="h-12 w-46 bg-white/100 backdrop-blur-md border-b-0 dark:bg-zinc-950/90"></div>
+              
+              {/* The bottom protruding part */}
+              <div className="absolute top-0 h-16 w-48 bg-white/100 border-black/5 dark:bg-zinc-950/90 dark:border-white/10 rounded-b-[2rem] flex items-center justify-center after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1 after:h-6 after:rounded-b-[2rem] after:shadow-[0_4px_20px_rgba(0,0,0,0.18)] after:-z-10">
+                  <Link href="/" className="text-3xl font-thin tracking-[0.3em] text-zinc-950 dark:text-zinc-50 pt-3 uppercase">
+                    Lelia
+                  </Link>
+              </div>
+              
+             
+          </div>
+
+          {/* Right Bar */}
+          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/90 dark:border-white/10">
+            <div className="h-full flex items-center justify-end pr-4">
+              <div ref={menuRef} className="relative">
+                <button
+                  type="button"
+                  onClick={() => setOpen((v) => !v)}
+                  aria-haspopup="menu"
+                  aria-expanded={open}
+                  aria-label="Menü"
+                  className="group inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/60 backdrop-blur-md hover:bg-white/80 dark:bg-zinc-950/40 dark:border-white/15 dark:hover:bg-zinc-950/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900/30 dark:focus-visible:ring-zinc-50/30"
+                >
+                  <span className="sr-only">Menü öffnen</span>
+                  <span className="relative flex h-4 w-4 flex-col justify-between">
+                    <span
+                      className={[
+                        "h-[1.5px] w-4 bg-zinc-900 dark:bg-zinc-50 origin-center transition-transform duration-200 ease-out",
+                        open ? "translate-y-[7.00px] rotate-45" : "translate-y-0 rotate-0",
+                      ].join(" ")}
+                    />
+                    <span
+                      className={[
+                        "h-[1.5px] w-4 bg-zinc-900 dark:bg-zinc-50 transition-[opacity,transform] duration-200 ease-out",
+                        open ? "opacity-0 scale-x-75" : "opacity-100 scale-x-100",
+                      ].join(" ")}
+                    />
+                    <span
+                      className={[
+                        "h-[1.5px] w-4 bg-zinc-900 dark:bg-zinc-50 origin-center transition-transform duration-200 ease-out",
+                        open ? "-translate-y-[7.00px] -rotate-45" : "translate-y-0 rotate-0",
+                      ].join(" ")}
+                    />
+                  </span>
+                </button>
+
+                <div
+                  role="menu"
+                  aria-label="Navigation"
+                  aria-hidden={!open}
+                  className={[
+                    "absolute right-4 mt-8 w-60 overflow-hidden rounded-2xl",
+                    "border border-black/10 bg-white/95 backdrop-blur-md backdrop-saturate-150",
+                    "shadow-[0_16px_50px_rgba(0,0,0,0.14)] ring-1 ring-black/5",
+                    "dark:bg-zinc-950/90 dark:border-white/10 dark:ring-white/10",
+                    "origin-top-right transform-gpu will-change-transform",
+                    "transition-[opacity,transform,filter] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none",
+                    open
+                      ? "opacity-100 translate-y-0 scale-100 blur-0 pointer-events-auto"
+                      : "opacity-0 -translate-y-1 scale-[0.98] blur-[1px] pointer-events-none",
+                  ].join(" ")}
+                >
+                  <div className="px-4 pt-3 pb-2">
+                    <div className="text-[11px] font-medium tracking-[0.22em] uppercase text-zinc-500 dark:text-zinc-400">
+                      Navigation
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-black/5 dark:bg-white/10" />
+
+                  <nav className="py-2">
+                    {items.map((item) => (
+                      <Link
+                        key={item.href}
+                        role="menuitem"
+                        href={item.href}
+                        tabIndex={open ? 0 : -1}
+                        onClick={() => setOpen(false)}
+                        className={[
+                          "group flex items-center justify-between gap-3 px-4 py-2.5",
+                          "text-sm font-light tracking-wide text-zinc-900 dark:text-zinc-50",
+                          "hover:bg-zinc-900/5 dark:hover:bg-white/5",
+                          "focus:outline-none focus-visible:bg-zinc-900/5 dark:focus-visible:bg-white/5",
+                        ].join(" ")}
+                      >
+                        <span className="flex items-center gap-3">
+                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                          <span>{item.label}</span>
+                        </span>
+
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 20 20"
+                          className="h-4 w-4 text-zinc-400 dark:text-zinc-500 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5 motion-reduce:transition-none"
+                          fill="none"
+                        >
+                          <path
+                            d="M7.5 4.5L13 10l-5.5 5.5"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
