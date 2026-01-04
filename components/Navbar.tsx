@@ -86,7 +86,7 @@ const Navbar = () => {
                     <span
                       className={[
                         "h-[1.5px] w-4 bg-zinc-900 dark:bg-zinc-50 origin-center transition-transform duration-200 ease-out",
-                        open ? "translate-y-[7.00px] rotate-45" : "translate-y-0 rotate-0",
+                        open ? "translate-y-[7.20px] rotate-45" : "translate-y-0 rotate-0",
                       ].join(" ")}
                     />
                     <span
@@ -98,7 +98,7 @@ const Navbar = () => {
                     <span
                       className={[
                         "h-[1.5px] w-4 bg-zinc-900 dark:bg-zinc-50 origin-center transition-transform duration-200 ease-out",
-                        open ? "-translate-y-[7.00px] -rotate-45" : "translate-y-0 rotate-0",
+                        open ? "-translate-y-[7.20px] -rotate-45" : "translate-y-0 rotate-0",
                       ].join(" ")}
                     />
                   </span>
