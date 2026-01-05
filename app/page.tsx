@@ -75,13 +75,13 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(rgba(61, 56, 56, 0.3) 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(rgba(216, 190, 190, 0.3) 1px, transparent 1px)',
             backgroundSize: '4px 4px'
           }}
         />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <h1 className="text-5xl font-thin tracking-tight text-white sm:text-7xl lg:text-8xl drop-shadow-sm">
+          <h1 className="text-4xl md:text-5xl font-thin tracking-tight text-white lg:text-7xl drop-shadow-sm">
             Klavierunterricht mit Herz.
           </h1>
           <p className="mt-6 text-xl text-white/90 sm:text-2xl font-thin tracking-wide">
@@ -103,7 +103,7 @@ export default function Home() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={1}
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
@@ -128,7 +128,7 @@ export default function Home() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={1}
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>

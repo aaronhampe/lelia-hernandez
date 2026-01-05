@@ -52,7 +52,7 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center items-start pointer-events-none">
         <div className="w-full flex items-start justify-center pointer-events-auto">
           {/* Left Bar */}
-          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/90 dark:border-white/10"></div>
+          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/100 dark:border-white/10"></div>
 
           {/* Center Shape */}
           <div className="relative z-10 flex flex-col items-center">
@@ -60,7 +60,7 @@ const Navbar = () => {
               <div className="h-12 w-46 bg-white/100 backdrop-blur-md border-b-0 dark:bg-zinc-950/90"></div>
               
               {/* The bottom protruding part */}
-              <div className="absolute top-0 h-16 w-48 bg-white/100 border-black/5 dark:bg-zinc-950/90 dark:border-white/10 rounded-b-[2rem] flex items-center justify-center after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1 after:h-6 after:rounded-b-[2rem] after:shadow-[0_4px_20px_rgba(0,0,0,0.18)] after:-z-10">
+              <div className="absolute top-0 h-16 w-48 bg-white/100 border-black/5 dark:bg-zinc-950/100 rounded-b-[2rem] flex items-center justify-center after:content-[''] after:absolute after:left-4 after:right-4 after:bottom-1 after:h-6 after:rounded-b-[2rem] after:shadow-[0_4px_20px_rgba(0,0,0,0.18)] after:-z-10">
                   <Link href="/" className="text-3xl font-thin tracking-[0.3em] text-zinc-950 dark:text-zinc-50 pt-3 uppercase">
                     Lelia
                   </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Bar */}
-          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/90 dark:border-white/10">
+          <div className="flex-1 h-12 bg-white/100 backdrop-blur-md border-b border-black/5 dark:bg-zinc-950/100 dark:border-white/10">
             <div className="h-full flex items-center justify-end pr-4">
               <div ref={menuRef} className="relative">
                 <button
