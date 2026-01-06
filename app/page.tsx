@@ -80,7 +80,7 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
+        <div className="mt-5 relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-thin tracking-tight text-white lg:text-7xl drop-shadow-sm">
             Klavierunterricht mit Herz.
           </h1>
@@ -91,7 +91,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/kontakt"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-light text-zinc-950 transition-all duration-300 hover:bg-zinc-100 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 sm:text-lg font-light text-zinc-950 transition-all duration-300 hover:bg-zinc-100 hover:scale-105"
             >
               <span>Kostenlose Schnupperstunde</span>
               <svg
@@ -110,7 +110,7 @@ export default function Home() {
             </Link>
             <Link
               href="/ueber-mich"
-              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-4 text-lg font-light text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-4 sm:text-lg font-light text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:scale-105"
             >
               Mehr erfahren
             </Link>
@@ -132,6 +132,92 @@ export default function Home() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* Introduction Section */}
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center mb-24">
+            
+            {/* Bild Bereich */}
+            <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-zinc-100">
+               <Image
+                src="/images/lelia-hernandez-klavier-hannover.webp"
+                alt="Lelia Hernández am Klavier"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+              {/* Optional: Design-Element für mehr Tiefe */}
+              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl" />
+            </div>
+
+            {/* Text Bereich */}
+            <div className="text-left">
+              <h2 className="text-4xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl mb-8">
+                Herzlich willkommen.
+              </h2>
+              <div className="space-y-6 text-xl font-light leading-relaxed text-zinc-600 dark:text-zinc-400">
+                <p>
+                  Mein Name ist Lelia Hernández. Ich biete individuellen Klavierunterricht in
+                  Hannover an. 
+                </p>
+                <p>
+                  Musik ist mehr als nur das Drücken von Tasten – sie ist Ausdruck, Emotion und Handwerk zugleich. 
+                  Gemeinsam entwickeln wir Ihre musikalischen Fähigkeiten, von den technischen Grundlagen bis hin zur künstlerischen Reife.
+                </p>
+              </div>
+
+              {/* Features als Liste statt Grid, integriert in den Textfluss */}
+              <div className="mt-12 space-y-8">
+                 <div className="flex gap-4">
+                    <div className="flex-none pt-1">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Individueller Unterricht</h3>
+                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Abgestimmt auf Ihre Interessen, für jedes Alter & Niveau.</p>
+                    </div>
+                 </div>
+
+                 <div className="flex gap-4">
+                    <div className="flex-none pt-1">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Maximale Flexibilität</h3>
+                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Unterricht bei Ihnen zu Hause, im Lehrraum oder online.</p>
+                    </div>
+                 </div>
+
+                 <div className="flex gap-4">
+                    <div className="flex-none pt-1">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
+                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25" />
+                         </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Freude an der Musik</h3>
+                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Leidenschaft statt Druck. Technik und Gefühl im Einklang.</p>
+                    </div>
+                 </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -198,105 +284,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-14 sm:py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-10 sm:mb-12">
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-4">
-              Herzlich willkommen
-            </h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
-              Mein Name ist Lelia Hernández und ich erteile Klavierunterricht in
-              Hannover. Egal ob Klassik, Rock, Pop... Gemeinsam bringen wir Ihre
-              Lieblingssongs auf das Klavier!
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 hover:-translate-y-1 dark:bg-zinc-900/50 dark:ring-white/10 dark:hover:shadow-white/5">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 transition-colors group-hover:bg-zinc-900 group-hover:text-white dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-white dark:group-hover:text-zinc-900">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-50">
-                Individueller Unterricht
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-300">
-                Seit einigen Jahren erteile ich Einzelunterricht für
-                Schülerinnen und Schüler jeder Altersstufe. Der Unterricht wird
-                individuell an Ihre Interessen angepasst.
-              </p>
-            </div>
-            <div className="group rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 hover:-translate-y-1 dark:bg-zinc-900/50 dark:ring-white/10 dark:hover:shadow-white/5">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 transition-colors group-hover:bg-zinc-900 group-hover:text-white dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-white dark:group-hover:text-zinc-900">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-50">
-                Flexibler Ort
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-300">
-                Gerne komme ich persönlich zu Ihnen nach Hause. Alternativ
-                unterrichte ich in meinem Lehrraum mit Flügel, Klavier und
-                E-Piano oder online via Skype.
-              </p>
-            </div>
-            <div className="group rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 hover:-translate-y-1 dark:bg-zinc-900/50 dark:ring-white/10 dark:hover:shadow-white/5">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-zinc-600 transition-colors group-hover:bg-zinc-900 group-hover:text-white dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-white dark:group-hover:text-zinc-900">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-zinc-900 dark:text-zinc-50">
-                Spaß am Spiel
-              </h3>
-              <p className="text-zinc-600 dark:text-zinc-300">
-                Meiner Ansicht nach ist es von höchster Wichtigkeit, dass
-                Schülerinnen und Schüler Spaß an dem Klavierspiel haben, um
-                erfolgreich zu werden.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonial Section */}
       <section className="py-14 sm:py-16">
