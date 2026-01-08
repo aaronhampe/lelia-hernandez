@@ -2,60 +2,36 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Wo findet der Klavierunterricht statt?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Der Unterricht ist flexibel möglich: bei Ihnen zuhause in Hannover, in meinem Lehrraum oder online.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Ist der Unterricht für Anfänger geeignet?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja. Ich unterrichte Kinder und Erwachsene – von Anfängerinnen und Anfängern bis Fortgeschrittene.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Gibt es eine Schnupperstunde?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja – Sie können eine kostenlose Schnupperstunde vereinbaren.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Welche Musikrichtungen werden unterrichtet?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Je nach Ziel: Klassik sowie Rock & Pop – wir arbeiten an Technik und musikalischem Ausdruck und an Ihren Lieblingsstücken.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Wie kann ich Kontakt aufnehmen?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Am schnellsten über die Kontaktseite oder telefonisch.",
-        },
-      },
-    ],
-  };
+  const testimonials = [
+    {
+      name: "Aaron",
+      text: "Toller und herzlicher Klavierunterricht! :) Kann ich jedem empfehlen.",
+      initial: "A",
+    },
+    {
+      name: "Lina",
+      text: "Ich liebe den Unterricht bei Lelia. Es läuft ohne Druck und trotzdem lerne ich viel.",
+      initial: "L",
+    },
+    {
+      name: "Marie",
+      text: "Ich kann Lelia jedem weiterempfehlen. Sie ist eine liebe Lehrerin. Der Klavierunterricht macht wirklich Spaß bei ihr.",
+      initial: "M",
+    },
+    {
+      name: "Leon",
+      text: "Ich habe viel bei Lelia gelernt! Sie macht tollen Klavierunterricht.",
+      initial: "L",
+    },
+    {
+      name: "Adrian",
+      text: "Netter Unterricht und immer ohne Druck und mit Spaß am Spiel.",
+      initial: "A",
+    },
+  ];
   
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
       {/* Hero Section mit Video Background */}
       <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
         <video
@@ -82,18 +58,22 @@ export default function Home() {
 
         <div className="mt-5 relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-thin tracking-tight text-white lg:text-7xl drop-shadow-sm">
-            Klavierunterricht mit Herz.
+            Klavierunterricht <br className="block sm:hidden" />  mit Herz.
           </h1>
-          <p className="mt-6 text-xl text-white/90 sm:text-2xl font-thin tracking-wide">
-            Lelia Hernández San Martín • Hannover
-          </p>
+          
+          {/* Extravagante Responsive Trennung: Flexbox mit disappearing separator */}
+          <div className="mt-6 flex flex-col items-center gap-y-1 text-xl font-thin tracking-wide text-white/90 sm:flex-row sm:gap-x-4 sm:text-2xl">
+            <span className="whitespace-nowrap">Lelia Hernández San Martín</span>
+            <span className="hidden h-1 w-1 rounded-full bg-white/60 sm:block" aria-hidden="true" />
+            <span className="opacity-80">Hannover</span>
+          </div>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/kontakt"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 sm:text-lg font-light text-zinc-950 transition-all duration-300 hover:bg-zinc-100 hover:scale-105"
             >
-              <span>Kostenlose Schnupperstunde</span>
+              <span>Probestunde</span>
               <svg
                 className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
                 fill="none"
@@ -136,26 +116,17 @@ export default function Home() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center mb-24">
-            
-            {/* Bild Bereich */}
-            <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-zinc-100">
-               <Image
-                src="/images/lelia-hernandez-klavier-hannover.webp"
-                alt="Lelia Hernández am Klavier"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-              {/* Optional: Design-Element für mehr Tiefe */}
-              <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl" />
-            </div>
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Modern UX: Subtle Gradient Blob in Background - Adjusted for Dark Mode/Mobile */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] rounded-full bg-rose-50/50 blur-3xl opacity-60 dark:bg-rose-900/20 pointer-events-none" />
+
+        <div className="mx-auto max-w-6xl px-4 relative z-10">
+          {/* Modern UX: items-start statt items-center für Sticky-Effekt */}
+          {/* Mobile Optimization: Text zuerst (order-1), dann Bild (order-2) */}
+          <div className="grid grid-cols-1 gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24 items-start mb-0">
 
             {/* Text Bereich */}
-            <div className="text-left">
+            <div className="text-left order-1">
               <h2 className="text-4xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl mb-8">
                 Herzlich willkommen.
               </h2>
@@ -166,7 +137,12 @@ export default function Home() {
                 </p>
                 <p>
                   Musik ist mehr als nur das Drücken von Tasten – sie ist Ausdruck, Emotion und Handwerk zugleich. 
-                  Gemeinsam entwickeln wir Ihre musikalischen Fähigkeiten, von den technischen Grundlagen bis hin zur künstlerischen Reife.
+                  Gemeinsam entwickeln wir Deine musikalischen Fähigkeiten, von den technischen Grundlagen bis hin zur künstlerischen Reife.
+                </p>
+                {/* Extra Text für Scroll-Länge */}
+                <p>
+                  Dabei ist es mir besonders wichtig, eine Atmosphäre zu schaffen, in der Du Dich wohlfühlst.
+                  Fehler sind keine Hindernisse, sondern Teil des Lernprozesses.
                 </p>
               </div>
 
@@ -182,7 +158,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Individueller Unterricht</h3>
-                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Abgestimmt auf Ihre Interessen, für jedes Alter & Niveau.</p>
+                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Abgestimmt auf Deine Interessen, für jedes Alter & Niveau.</p>
                     </div>
                  </div>
 
@@ -197,7 +173,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Maximale Flexibilität</h3>
-                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Unterricht bei Ihnen zu Hause, im Lehrraum oder online.</p>
+                      <p className="mt-1 text-base font-light text-zinc-500 dark:text-zinc-400">Unterricht bei Dir zu Hause, im Lehrraum oder online.</p>
                     </div>
                  </div>
 
@@ -217,242 +193,190 @@ export default function Home() {
               </div>
 
             </div>
+            
+            {/* Bild Bereich - Modern UX: Sticky Positioning */}
+            <div className="relative order-2 lg:h-[calc(100vh-200px)] lg:sticky lg:top-32">
+               {/* Mobile Aspect Ratio anpassen für weniger Höhe auf kleinen Screens */}
+               <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-zinc-100 h-full shadow-2xl shadow-zinc-200 dark:shadow-none dark:bg-zinc-800">
+                 <Image
+                  src="/images/lelia-hernandez-klavier-hannover.webp"
+                  alt="Lelia Hernández am Klavier"
+                  fill
+                  className="object-cover object-center transition-transform hover:scale-105 duration-700 ease-out"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                
+                {/* Glassmorphism Badge - Refined for Contrast & Mobile */}
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-4 rounded-xl bg-zinc-900/30 backdrop-blur-md border border-white/10 text-white shadow-lg">
+                  <p className="text-xs sm:text-sm font-light leading-relaxed italic">
+                    &quot;Das Klavier ist mein Instrument, um Geschichten ohne Worte zu erzählen.&quot;
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
+      {/* NEW: Cinematic Parallax Interlude Section - Optimized for Mobile */}
+      <section className="relative w-full py-24 md:py-48 bg-zinc-900 overflow-hidden flex items-center justify-center">
+         <div 
+           className="absolute inset-0 opacity-40 mix-blend-overlay bg-center bg-cover bg-no-repeat bg-local md:bg-fixed transition-opacity duration-500"
+           style={{ backgroundImage: 'url(/images/lelia-hernandez-klavier-hannover.webp)' }} 
+         />
+         {/* Gradient verstärkt für bessere Textlesbarkeit auf Mobile */}
+         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-zinc-950/80" />
+         
+         <div className="relative z-10 max-w-4xl px-4 sm:px-6 text-center">
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-thin text-white leading-tight drop-shadow-lg">
+              <span className="block mb-3 sm:mb-2 text-sm sm:text-xl font-medium tracking-[0.2em] text-zinc-400 uppercase">Philosophie</span>
+              Technik ist wichtig. <br />
+              <span className="text-white/90 italic font-serif mt-1 block">Gefühl ist alles.</span>
+            </h3>
+         </div>
+      </section>
+
+      {/* Testimonial Section - Redesigned */}
+      <section className="py-24 bg-zinc-50 dark:bg-zinc-950/50 overflow-hidden transition-colors duration-300">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="text-4xl font-thin tracking-tight text-center text-zinc-900 dark:text-zinc-50 mb-16 sm:text-5xl">
+            Stimmen meiner Schüler*innen
+          </h2>
+
+          {/* Slider Container - Scroll Snap */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide md:gap-8 md:pb-12 custom-scrollbar">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="snap-center shrink-0 w-[85vw] md:w-[500px] relative flex flex-col justify-between bg-white dark:bg-zinc-900 p-10 md:p-12 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.03)] dark:shadow-none transition-all hover:scale-[1.01]"
+              >
+                {/* Dekoratives Anführungszeichen im Hintergrund */}
+                <div className="absolute top-6 right-8 text-9xl font-serif text-zinc-50 dark:text-zinc-800 pointer-events-none select-none opacity-60">
+                  &rdquo;
+                </div>
+
+                <blockquote className="relative z-10">
+                  <p className="text-xl md:text-2xl font-thin italic leading-relaxed text-zinc-700 dark:text-zinc-300">
+                    {t.text}
+                  </p>
+                </blockquote>
+
+                <div className="mt-8 flex items-center gap-4 border-t border-zinc-50 dark:border-zinc-800 pt-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 text-zinc-400 dark:text-zinc-300 font-light text-lg">
+                    {t.initial}
+                  </div>
+                  <div>
+                    <cite className="not-italic text-sm font-semibold uppercase tracking-widest text-zinc-900 dark:text-zinc-50">
+                      {t.name}
+                    </cite>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Spacer am Ende für angenehmes Scrollen auf Mobile */}
+            <div className="snap-center shrink-0 w-4 sm:hidden" />
+          </div>
+          
+           {/* Visual Scroll Hint */}
+           <div className="mt-4 flex justify-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
+           </div>
+
+        </div>
+      </section>
+
       {/* Local SEO / Hannover */}
-      <section className="mt-16 pb-6 sm:pb-10">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
-              <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-                Klavierunterricht in Hannover
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-start">
+            
+            {/* Text Bereich */}
+            <div>
+              <h2 className="text-4xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl mb-8">
+                Klavierunterricht in Hannover.
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
-                Sie suchen modernen, professionellen Klavierunterricht in
-                Hannover? Ich unterrichte in Hannover (30177) und flexibel nach
-                Absprache – individuell, motivierend und ohne Druck.
-              </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="space-y-6 text-xl font-light leading-relaxed text-zinc-600 dark:text-zinc-400">
+                <p>
+                  Suchst Du modernen, professionellen Klavierunterricht? 
+                  Mitten in Hannover-List (30177) oder ganz flexibel bei Dir zu Hause.
+                </p>
+                <p>
+                  Mein Ansatz verbindet technisches Fundament mit der Freude am Spiel – individuell, motivierend und immer ohne Druck.
+                </p>
+              </div>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-zinc-800 transition-colors dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
+                  className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-8 py-4 text-lg font-light text-white transition-all hover:bg-zinc-800 hover:scale-[1.02] dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
                 >
                   Schnupperstunde anfragen
                 </Link>
                 <Link
                   href="/ueber-mich"
-                  className="inline-flex items-center justify-center rounded-full bg-white/70 px-6 py-3 text-base font-semibold text-zinc-900 ring-1 ring-black/10 backdrop-blur hover:bg-white transition-colors dark:bg-zinc-900/60 dark:text-zinc-50 dark:ring-white/10 dark:hover:bg-zinc-900"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-transparent px-8 py-4 text-lg font-light text-zinc-900 transition-all hover:bg-zinc-50 hover:scale-[1.02] dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
                 >
                   Mehr über mich
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/50 dark:ring-white/10">
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                      Ort
-                    </p>
-                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                      Hannover (30177) • Zuhause / Lehrraum / online
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                      Für wen
-                    </p>
-                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                      Kinder & Erwachsene • Anfänger & Fortgeschrittene
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                      Stil
-                    </p>
-                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
-                      Klassik • Rock & Pop • Lieblingsstücke
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* Info Details - Minimalist List */}
+            <div className="lg:mt-4 space-y-8 border-l border-zinc-200 pl-8 lg:pl-16 dark:border-zinc-800">
+               <div>
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-zinc-400 mb-2">Ort</h3>
+                  <p className="text-2xl font-light text-zinc-900 dark:text-zinc-50">Hannover (30177)</p>
+                  <p className="mt-1 text-lg text-zinc-500 font-light">Zuhause, Lehrraum oder Online</p>
+               </div>
+               
+               <div>
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-zinc-400 mb-2">Für Wen</h3>
+                  <p className="text-2xl font-light text-zinc-900 dark:text-zinc-50">Kinder & Erwachsene</p>
+                  <p className="mt-1 text-lg text-zinc-500 font-light">Vom Anfänger bis zum Fortgeschrittenen</p>
+               </div>
+
+               <div>
+                  <h3 className="text-sm font-medium uppercase tracking-widest text-zinc-400 mb-2">Stil</h3>
+                  <p className="text-2xl font-light text-zinc-900 dark:text-zinc-50">Klassik, Rock & Pop</p>
+                  <p className="mt-1 text-lg text-zinc-500 font-light">Und Deine persönlichen Lieblingsstücke</p>
+               </div>
             </div>
+
           </div>
         </div>
       </section>
 
+      {/* CTA Section - Redesigned */}
+      <section className="py-12 sm:py-24 px-4">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] bg-zinc-900 px-6 py-20 text-center sm:px-16 sm:py-24 relative">
+          
+          {/* Subtle Background Element */}
+           <div 
+            className="absolute inset-0 opacity-10 pointer-events-none"
+            style={{
+               backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
+               backgroundSize: '32px 32px'
+            }}
+           />
 
-      {/* Testimonial Section */}
-      <section className="py-14 sm:py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl bg-white/70 p-8 sm:p-10 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/50 dark:ring-white/10">
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-8 text-center">
-              Das sagen meine Schüler*innen
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-thin tracking-tight text-white mb-8">
+              Bereit für den ersten Ton?
             </h2>
-
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              <figure className="group relative rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 dark:bg-zinc-950/30 dark:ring-white/10">
-                <svg
-                  className="absolute top-4 right-4 h-8 w-8 text-zinc-200 dark:text-zinc-700"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                ></svg>
-                <blockquote className="text-base italic leading-relaxed text-zinc-700 dark:text-zinc-200">
-                  „Toller und herzlicher Klavierunterricht! :) Kann ich jedem
-                  empfehlen.“
-                </blockquote>
-                <figcaption className="mt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-                    <span className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
-                      A
-                    </span>
-                  </div>
-                  <span className="font-semibold text-zinc-900 dark:text-zinc-50">
-                    Aaron
-                  </span>
-                </figcaption>
-              </figure>
-
-              <figure className="group relative rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 dark:bg-zinc-950/30 dark:ring-white/10">
-                <svg
-                  className="absolute top-4 right-4 h-8 w-8 text-zinc-200 dark:text-zinc-700"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                ></svg>
-                <blockquote className="text-base italic leading-relaxed text-zinc-700 dark:text-zinc-200">
-                  „Ich liebe den Unterricht bei Lelia. Es läuft ohne Druck und
-                  trotzdem lerne ich viel.“
-                </blockquote>
-                <figcaption className="mt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-                    <span className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
-                      L
-                    </span>
-                  </div>
-                  <span className="font-semibold text-zinc-900 dark:text-zinc-50">
-                    Lina
-                  </span>
-                </figcaption>
-              </figure>
-
-              <figure className="group relative rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/5 dark:bg-zinc-950/30 dark:ring-white/10">
-                <svg
-                  className="absolute top-4 right-4 h-8 w-8 text-zinc-200 dark:text-zinc-700"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                ></svg>
-                <blockquote className="text-base italic leading-relaxed text-zinc-700 dark:text-zinc-200">
-                  „Ich kann Lelia jedem weiterempfehlen. Sie ist eine liebe
-                  Lehrerin. Der Klavierunterricht macht wirklich Spaß bei ihr.“
-                </blockquote>
-                <figcaption className="mt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-                    <span className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
-                      M
-                    </span>
-                  </div>
-                  <span className="font-semibold text-zinc-900 dark:text-zinc-50">
-                    Marie
-                  </span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-14 sm:py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl bg-white/70 p-8 sm:p-10 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/50 dark:ring-white/10">
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-              Häufige Fragen
-            </h2>
-
-            <dl className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-950/30 dark:ring-white/10">
-                <dt className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                  Wo findet der Klavierunterricht statt?
-                </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Flexibel: bei Ihnen zuhause in Hannover, in meinem Lehrraum
-                  oder online.
-                </dd>
-              </div>
-
-              <div className="rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-950/30 dark:ring-white/10">
-                <dt className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                  Ist der Unterricht für Anfänger geeignet?
-                </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Ja. Ich unterrichte Kinder und Erwachsene – vom Einstieg bis
-                  fortgeschrittenes Niveau.
-                </dd>
-              </div>
-
-              <div className="rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-950/30 dark:ring-white/10">
-                <dt className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                  Gibt es eine Schnupperstunde?
-                </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Ja – Sie können eine kostenlose Schnupperstunde vereinbaren.
-                  Am besten direkt über{" "}
-                  <Link
-                    href="/kontakt"
-                    className="font-semibold text-zinc-900 underline underline-offset-4 hover:text-zinc-700 transition-colors dark:text-zinc-50 dark:hover:text-zinc-200"
-                  >
-                    Kontakt
-                  </Link>
-                  .
-                </dd>
-              </div>
-
-              <div className="rounded-2xl bg-white/70 p-6 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-950/30 dark:ring-white/10">
-                <dt className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                  Welche Musikrichtungen werden unterrichtet?
-                </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-                  Klassik sowie Rock &amp; Pop – wir arbeiten an Technik,
-                  Ausdruck und Ihren Lieblingsstücken.
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-14 sm:py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl bg-zinc-950 px-8 py-12 text-center text-white shadow-xl dark:bg-white dark:text-zinc-950">
-            <h2 className="text-3xl font-semibold tracking-tight mb-3">
-              Bereit für die erste Stunde?
-            </h2>
-            <p className="text-lg text-white/80 dark:text-zinc-600 mb-8 max-w-xl mx-auto">
-              Melden Sie sich jetzt für eine kostenlose Schnupperstunde an und
-              entdecken Sie Ihre Leidenschaft für das Klavier.
+            <p className="text-md sm:text-2xl font-thin text-zinc-300 mb-12 leading-relaxed">
+              Finde heraus, wie viel Freude Musik machen kann. 
+              Melde Dich jetzt für Deine günstige Schnupperstunde an.
             </p>
             <Link
               href="/kontakt"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-base font-semibold text-zinc-900 hover:bg-zinc-100 transition-all duration-200 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
+              className="inline-flex items-center justify-center rounded-full bg-white px-10 py-5 text-lg font-light text-zinc-900 transition-all duration-300 hover:bg-zinc-200 hover:scale-105"
             >
-              <span>Kontakt aufnehmen</span>
-              <svg
-                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
+              Kontakt aufnehmen
             </Link>
           </div>
         </div>

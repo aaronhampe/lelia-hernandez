@@ -8,10 +8,10 @@ const Navbar = () => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   const items = [
-    { href: "/#ueber-mich", label: "Über Mich" },
-    { href: "/#preise", label: "Preise" },
-    { href: "/#haeufige-fragen", label: "Häufige Fragen" },
-    { href: "/#kontakt", label: "Kontakt" },
+    { href: "/ueber-mich", label: "Über Mich" },
+    { href: "/haeufige-fragen", label: "Häufige Fragen" },
+    { href: "/unterricht", label: "Unterricht" },
+    { href: "/kontakt", label: "Kontakt" },
   ] as const;
 
   useEffect(() => {

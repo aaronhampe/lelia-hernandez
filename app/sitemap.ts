@@ -13,16 +13,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteUrl}/unterricht`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/ueber-mich`,
       lastModified,
       changeFrequency: "yearly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
       url: `${siteUrl}/kontakt`,
       lastModified,
       changeFrequency: "yearly",
-      priority: 0.7,
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/haeufige-fragen`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/impressum`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${siteUrl}/datenschutz`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }

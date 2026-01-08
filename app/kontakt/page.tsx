@@ -7,168 +7,164 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-16">
-      <div className="mx-auto max-w-6xl">
+    <main className="bg-white min-h-screen pt-32 sm:pt-40 pb-24 dark:bg-zinc-950 transition-colors duration-300">
+      <div className="mx-auto max-w-6xl px-4">
+        
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="inline-flex items-center rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-zinc-700 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/60 dark:text-zinc-200 dark:ring-white/10 mb-4">
-            Jetzt Kontakt aufnehmen
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">Kontakt</h1>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">
-            Haben Sie Fragen oder möchten Sie eine kostenlose Schnupperstunde vereinbaren? Ich freue mich auf Ihre Nachricht!
+        <div className="text-center mb-16 sm:mb-24 max-w-3xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
+            Kontakt.
+          </h1>
+          <p className="text-xl font-light text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            Hast Du Fragen oder möchtest Du eine kostenlose Schnupperstunde vereinbaren? 
+            Ich freue mich darauf, von Dir zu hören.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/50 dark:ring-white/10">
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 mb-6">Kontaktdaten</h2>
-              <div className="space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+          
+          {/* Left Column: Contact Info */}
+          <div className="space-y-12">
+            
+            {/* Direct Contact */}
+            <section>
+              <h2 className="text-2xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 mb-6">
+                Auf einen Blick
+              </h2>
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800">
-                    <svg className="h-6 w-6 text-zinc-600 dark:text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-900 dark:text-zinc-50">Lelia Hernández San Martín</p>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-300">Klavierlehrerin</p>
-                  </div>
+                   <div className="mt-1 flex-shrink-0 text-zinc-400">
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                   </div>
+                   <div>
+                      <p className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Standort</p>
+                      <p className="text-lg font-light text-zinc-600 dark:text-zinc-400">Hannover (30177)</p>
+                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-zinc-100 dark:bg-zinc-800">
-                    <svg className="h-6 w-6 text-zinc-600 dark:text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-zinc-900 dark:text-zinc-50">Standort</p>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-300">30177 Hannover</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <a href="tel:0511629305" className="group flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-zinc-100 transition-colors hover:bg-zinc-900 dark:bg-zinc-800 dark:hover:bg-white">
-                    <svg className="h-6 w-6 text-zinc-600 transition-colors group-hover:text-white dark:text-zinc-300 dark:group-hover:text-zinc-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </a>
-                  <div>
-                    <p className="font-semibold text-zinc-900 dark:text-zinc-50">Telefon</p>
-                    <a href="tel:0511629305" className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors dark:text-zinc-300 dark:hover:text-white">
-                      0511 / 629305
-                    </a>
-                  </div>
+                   <div className="mt-1 flex-shrink-0 text-zinc-400">
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                   </div>
+                   <div>
+                      <p className="text-lg font-medium text-zinc-900 dark:text-zinc-50">Telefon</p>
+                      <a href="tel:0511629305" className="text-lg font-light text-zinc-600 hover:text-zinc-900 transition-colors dark:text-zinc-400 dark:hover:text-zinc-200">
+                        0511 / 629305
+                      </a>
+                   </div>
                 </div>
               </div>
-            </div>
+            </section>
             
-            {/* Quick Info Card */}
-            <div className="rounded-3xl bg-zinc-950 p-8 text-white dark:bg-white dark:text-zinc-950">
-              <h3 className="text-lg font-semibold mb-3">Kostenlose Schnupperstunde</h3>
-              <p className="text-sm text-white/80 dark:text-zinc-600 mb-4">
-                Lernen Sie mich und meinen Unterrichtsstil in einer unverbindlichen Probestunde kennen.
+            {/* Quick Info Box */}
+            <div className="rounded-3xl bg-zinc-50 p-8 border border-zinc-100 dark:bg-zinc-900/50 dark:border-zinc-800">
+              <h3 className="text-xl font-medium text-zinc-900 dark:text-zinc-50 mb-4">
+                Günstige Probestunde
+              </h3>
+              <p className="text-base font-light text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
+                Lerne mich und meinen Unterrichtsstil in einer unverbindlichen Probestunde kennen.
+                Völlig risikofrei und günstig.
               </p>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2">
-                  <svg className="h-4 w-4 text-white/60 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Unverbindlich & kostenlos
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm font-light text-zinc-600 dark:text-zinc-400">
+                   <span className="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
+                   Unverbindlich
                 </li>
-                <li className="flex items-center gap-2">
-                  <svg className="h-4 w-4 text-white/60 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Flexible Terminvereinbarung
+                <li className="flex items-center gap-3 text-sm font-light text-zinc-600 dark:text-zinc-400">
+                   <span className="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
+                   Flexible Terminfindung
                 </li>
-                <li className="flex items-center gap-2">
-                  <svg className="h-4 w-4 text-white/60 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Vor Ort, bei Ihnen oder online
+                <li className="flex items-center gap-3 text-sm font-light text-zinc-600 dark:text-zinc-400">
+                   <span className="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
+                   Bei Dir, vor Ort oder Online
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur dark:bg-zinc-900/50 dark:ring-white/10">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 mb-6">Schreiben Sie mir</h2>
+          {/* Right Column: Contact Form */}
+          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.05)] border border-zinc-100 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-none">
+            <h2 className="text-2xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
+              Schreib mir
+            </h2>
             <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  className="mt-1 block w-full rounded-2xl border border-black/10 bg-white/80 p-3 text-zinc-900 shadow-sm outline-none transition focus:border-zinc-900/30 focus:ring-4 focus:ring-zinc-900/10 dark:border-white/10 dark:bg-zinc-950/40 dark:text-zinc-50 dark:focus:border-white/20 dark:focus:ring-white/10"
-                />
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium text-zinc-900 dark:text-zinc-200 ml-1">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder="Dein Name"
+                    className="w-full rounded-xl border-0 bg-zinc-50 px-4 py-3.5 text-zinc-900 placeholder:text-zinc-400 focus:ring-1 focus:ring-inset focus:ring-zinc-900 sm:text-sm sm:leading-6 dark:bg-zinc-800 dark:text-white dark:focus:ring-white transition-all"
+                  />
+                </div>
+                <div className="space-y-2">
+                   <label htmlFor="email" className="text-sm font-medium text-zinc-900 dark:text-zinc-200 ml-1">
+                    E-Mail
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="name@beispiel.de"
+                    className="w-full rounded-xl border-0 bg-zinc-50 px-4 py-3.5 text-zinc-900 placeholder:text-zinc-400 focus:ring-1 focus:ring-inset focus:ring-zinc-900 sm:text-sm sm:leading-6 dark:bg-zinc-800 dark:text-white dark:focus:ring-white transition-all"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-                  E-Mail-Adresse *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  className="mt-1 block w-full rounded-2xl border border-black/10 bg-white/80 p-3 text-zinc-900 shadow-sm outline-none transition focus:border-zinc-900/30 focus:ring-4 focus:ring-zinc-900/10 dark:border-white/10 dark:bg-zinc-950/40 dark:text-zinc-50 dark:focus:border-white/20 dark:focus:ring-white/10"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-                  Telefon
+              <div className="space-y-2">
+                <label htmlFor="phone" className="text-sm font-medium text-zinc-900 dark:text-zinc-200 ml-1">
+                  Telefon (optional)
                 </label>
                 <input
                   type="tel"
                   name="phone"
                   id="phone"
-                  className="mt-1 block w-full rounded-2xl border border-black/10 bg-white/80 p-3 text-zinc-900 shadow-sm outline-none transition focus:border-zinc-900/30 focus:ring-4 focus:ring-zinc-900/10 dark:border-white/10 dark:bg-zinc-950/40 dark:text-zinc-50 dark:focus:border-white/20 dark:focus:ring-white/10"
+                  placeholder="Für Rückfragen"
+                  className="w-full rounded-xl border-0 bg-zinc-50 px-4 py-3.5 text-zinc-900 placeholder:text-zinc-400 focus:ring-1 focus:ring-inset focus:ring-zinc-900 sm:text-sm sm:leading-6 dark:bg-zinc-800 dark:text-white dark:focus:ring-white transition-all"
                 />
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-                  Nachricht *
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-medium text-zinc-900 dark:text-zinc-200 ml-1">
+                  Nachricht
                 </label>
                 <textarea
                   name="message"
                   id="message"
-                  rows={4}
+                  rows={5}
                   required
-                  className="mt-1 block w-full resize-y rounded-2xl border border-black/10 bg-white/80 p-3 text-zinc-900 shadow-sm outline-none transition focus:border-zinc-900/30 focus:ring-4 focus:ring-zinc-900/10 dark:border-white/10 dark:bg-zinc-950/40 dark:text-zinc-50 dark:focus:border-white/20 dark:focus:ring-white/10"
+                  placeholder="Wie kann ich Dir helfen?"
+                  className="w-full resize-y rounded-xl border-0 bg-zinc-50 px-4 py-3.5 text-zinc-900 placeholder:text-zinc-400 focus:ring-1 focus:ring-inset focus:ring-zinc-900 sm:text-sm sm:leading-6 dark:bg-zinc-800 dark:text-white dark:focus:ring-white transition-all"
                 ></textarea>
               </div>
 
-              <div>
+              <div className="pt-2">
                 <button
                   type="submit"
-                  className="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-zinc-900/10 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100 dark:focus:ring-white/10"
+                  className="w-full rounded-full bg-zinc-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 dark:focus-visible:outline-white transition-all duration-200 hover:scale-[1.01]"
                 >
-                  <span>Nachricht senden</span>
-                  <svg className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
+                  Nachricht senden
                 </button>
               </div>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-4">
-                * Pflichtfelder. Mit dem Absenden erklären Sie sich mit der Speicherung Ihrer Daten zur Kontaktaufnahme einverstanden.
+              
+              <p className="text-xs text-center text-zinc-400 font-light mt-4 dark:text-zinc-500">
+                Ich melde mich schnellstmöglich bei Dir zurück.
               </p>
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
