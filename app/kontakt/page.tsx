@@ -16,7 +16,7 @@ export default function ContactPage() {
             Kontakt.
           </h1>
           <p className="text-xl font-light text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Hast Du Fragen oder möchtest Du eine kostenlose Schnupperstunde vereinbaren? 
+            Hast Du Fragen oder möchtest Du eine günstige Schnupperstunde vereinbaren? 
             Ich freue mich darauf, von Dir zu hören.
           </p>
         </div>
@@ -92,7 +92,12 @@ export default function ContactPage() {
             <h2 className="text-2xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
               Schreib mir
             </h2>
-            <form className="space-y-6">
+            <form className="space-y-6" method="POST" action="https://formspree.io/f/mkorawdo">
+              <input 
+                type="hidden" 
+                name="_next" 
+                value={`${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/danke`} 
+              />
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-zinc-900 dark:text-zinc-200 ml-1">
@@ -147,6 +152,23 @@ export default function ContactPage() {
                   placeholder="Wie kann ich Dir helfen?"
                   className="w-full resize-y rounded-xl border-0 bg-zinc-50 px-4 py-3.5 text-zinc-900 placeholder:text-zinc-400 focus:ring-1 focus:ring-inset focus:ring-zinc-900 sm:text-sm sm:leading-6 dark:bg-zinc-800 dark:text-white dark:focus:ring-white transition-all"
                 ></textarea>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <input
+                  id="privacy"
+                  name="privacy"
+                  type="checkbox"
+                  required
+                  className="mt-1 h-4 w-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:focus:ring-white accent-zinc-900 dark:accent-white"
+                />
+                <label htmlFor="privacy" className="text-sm font-light text-zinc-600 dark:text-zinc-400">
+                  Ich habe die <a href="/datenschutz" className="underline hover:text-zinc-900 dark:hover:text-zinc-300">Datenschutzerklärung</a> zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur Beantwortung meiner Anfrage elektronisch erhoben und gespeichert werden.
+                  <br />
+                  <span className="text-xs text-zinc-500 dark:text-zinc-500 block mt-1">
+                    Hinweis: Du kannst Deine Einwilligung jederzeit für die Zukunft per E-Mail an mich widerrufen.
+                  </span>
+                </label>
               </div>
 
               <div className="pt-2">

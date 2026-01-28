@@ -57,12 +57,11 @@ export default function DatenschutzPage() {
             </p>
             <p className="mb-4">
               Lelia Hernández San Martín<br />
-              Musterstraße 1<br />
               30177 Hannover
             </p>
             <p className="mb-4">
               Telefon: 0511 / 629305<br />
-              E-Mail: info@beispiel.de
+              E-Mail: lelia_hernandez@web.de
             </p>
             <p className="mb-4">
               Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.

@@ -103,7 +103,7 @@ const Footer = () => {
                 rel="noopener noreferrer" 
                 className="text-xs font-light text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
               >
-                Webdesign von Aaron Hampe
+                Website: Studio Hampe
               </a>
             </div>
             <div className="flex gap-6">

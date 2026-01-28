@@ -19,7 +19,6 @@ export default function ImpressumPage() {
             <p className="text-zinc-600 dark:text-zinc-400">
               Lelia Hernández San Martín<br />
               Klavierunterricht<br />
-              Musterstraße 1<br />
               30177 Hannover
             </p>
           </section>
@@ -28,7 +27,7 @@ export default function ImpressumPage() {
             <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-50 mb-4">Kontakt</h2>
             <p className="text-zinc-600 dark:text-zinc-400">
               Telefon: <a href="tel:0511629305" className="hover:text-zinc-900 dark:hover:text-zinc-200">0511 / 629305</a><br />
-              E-Mail: <a href="mailto:info@beispiel.de" className="hover:text-zinc-900 dark:hover:text-zinc-200">info@beispiel.de</a>
+              E-Mail: <a href="mailto:info@beispiel.de" className="hover:text-zinc-900 dark:hover:text-zinc-200">lelia_hernandez@web.de</a>
             </p>
           </section>
 
@@ -36,7 +35,6 @@ export default function ImpressumPage() {
             <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-50 mb-4">Redaktionell verantwortlich</h2>
             <p className="text-zinc-600 dark:text-zinc-400">
               Lelia Hernández San Martín<br />
-              Musterstraße 1<br />
               30177 Hannover
             </p>
           </section>
