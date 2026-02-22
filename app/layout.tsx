@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeInitScript from "@/components/ThemeInitScript";
+import CookieBanner from "@/components/CookieBanner";
+import Analytics from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -92,6 +94,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow px-4 sm:px-6 lg:px-8">{children}</main>
         <Footer />
+        <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

@@ -19,6 +19,7 @@ export default function ImpressumPage() {
             <p className="text-zinc-600 dark:text-zinc-400">
               Lelia Hernández San Martín<br />
               Klavierunterricht<br />
+              Richard-Wagner-Str. 27<br />
               30177 Hannover
             </p>
           </section>
@@ -35,6 +36,7 @@ export default function ImpressumPage() {
             <h2 className="text-xl font-medium text-zinc-900 dark:text-zinc-50 mb-4">Redaktionell verantwortlich</h2>
             <p className="text-zinc-600 dark:text-zinc-400">
               Lelia Hernández San Martín<br />
+              Richard-Wagner-Str. 27<br />
               30177 Hannover
             </p>
           </section>

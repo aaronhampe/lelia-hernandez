@@ -57,6 +57,7 @@ export default function DatenschutzPage() {
             </p>
             <p className="mb-4">
               Lelia Hernández San Martín<br />
+              Richard-Wagner-Str. 27<br />
               30177 Hannover
             </p>
             <p className="mb-4">
