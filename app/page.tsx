@@ -40,7 +40,7 @@ export default function Home() {
           loop
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
-          poster="/images/lelia-hernandez-klavier-hannover.webp"
+          poster="/images/piano-hintergrund-lelia.webp"
         >
           <source src="/videos/piano-background.webm" type="video/webm" />
           <source src="/videos/piano-background.mp4" type="video/mp4" />
