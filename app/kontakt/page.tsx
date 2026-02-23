@@ -92,7 +92,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-thin tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
               Schreib mir
             </h2>
-            <form className="space-y-6" method="POST" action="https://formspree.io/f/mkorawdo">
+            <form className="space-y-6" method="POST" action="https://formspree.io/f/xojnpywz">
               <input 
                 type="hidden" 
                 name="_next" 
