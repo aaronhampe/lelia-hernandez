@@ -1,34 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 
 export default function Home() {
-  const testimonials = [
-    {
-      name: "Aaron",
-      text: "Toller und herzlicher Klavierunterricht! :) Kann ich jedem empfehlen.",
-      initial: "A",
-    },
-    {
-      name: "Lina",
-      text: "Ich liebe den Unterricht bei Lelia. Es läuft ohne Druck und trotzdem lerne ich viel.",
-      initial: "L",
-    },
-    {
-      name: "Marie",
-      text: "Ich kann Lelia jedem weiterempfehlen. Sie ist eine liebe Lehrerin. Der Klavierunterricht macht wirklich Spaß bei ihr.",
-      initial: "M",
-    },
-    {
-      name: "Leon",
-      text: "Ich habe viel bei Lelia gelernt! Sie macht tollen Klavierunterricht.",
-      initial: "L",
-    },
-    {
-      name: "Adrian",
-      text: "Netter Unterricht und immer ohne Druck und mit Spaß am Spiel.",
-      initial: "A",
-    },
-  ];
   
   return (
     <div>
@@ -195,9 +169,9 @@ export default function Home() {
             </div>
             
             {/* Bild Bereich - Modern UX: Sticky Positioning */}
-            <div className="relative order-2 lg:h-[calc(100vh-200px)] lg:sticky lg:top-32">
+            <div className="relative order-2 lg:sticky lg:top-32">
                {/* Mobile Aspect Ratio anpassen für weniger Höhe auf kleinen Screens */}
-               <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-zinc-100 h-full shadow-2xl shadow-zinc-200 dark:shadow-none dark:bg-zinc-800">
+               <div className="relative aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl bg-zinc-100 shadow-2xl shadow-zinc-200 dark:shadow-none dark:bg-zinc-800">
                  <Image
                   src="/images/lelia-hernandez-klavier-hannover.webp"
                   alt="Lelia Hernández am Klavier"
@@ -245,47 +219,10 @@ export default function Home() {
             Stimmen meiner Schüler*innen
           </h2>
 
-          {/* Slider Container - Scroll Snap */}
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide md:gap-8 md:pb-12 custom-scrollbar">
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="snap-center shrink-0 w-[85vw] md:w-[500px] relative flex flex-col justify-between bg-white dark:bg-zinc-900 p-10 md:p-12 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.03)] dark:shadow-none transition-all hover:scale-[1.01]"
-              >
-                {/* Dekoratives Anführungszeichen im Hintergrund */}
-                <div className="absolute top-6 right-8 text-9xl font-serif text-zinc-50 dark:text-zinc-800 pointer-events-none select-none opacity-60">
-                  &rdquo;
-                </div>
-
-                <blockquote className="relative z-10">
-                  <p className="text-xl md:text-2xl font-thin italic leading-relaxed text-zinc-700 dark:text-zinc-300">
-                    {t.text}
-                  </p>
-                </blockquote>
-
-                <div className="mt-8 flex items-center gap-4 border-t border-zinc-50 dark:border-zinc-800 pt-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-700 text-zinc-400 dark:text-zinc-300 font-light text-lg">
-                    {t.initial}
-                  </div>
-                  <div>
-                    <cite className="not-italic text-sm font-semibold uppercase tracking-widest text-zinc-900 dark:text-zinc-50">
-                      {t.name}
-                    </cite>
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {/* Spacer am Ende für angenehmes Scrollen auf Mobile */}
-            <div className="snap-center shrink-0 w-4 sm:hidden" />
+          {/* Testimonial Slider Navigation */}
+          <div className="-mx-4 sm:mx-0">
+            <TestimonialSlider />
           </div>
-          
-           {/* Visual Scroll Hint */}
-           <div className="mt-4 flex justify-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-              <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
-           </div>
 
         </div>
       </section>
