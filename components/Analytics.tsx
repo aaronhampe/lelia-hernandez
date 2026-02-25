@@ -16,7 +16,7 @@ export default function Analytics() {
 
   if (!hasConsent) return null;
 
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-BRNWXCTXDH";
 
   if (!GA_ID) {
     console.warn(
