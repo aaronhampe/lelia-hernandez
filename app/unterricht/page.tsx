@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Unterricht & Konzept | Klavierunterricht Hannover",
-  description: "Erfahren Sie mehr über mein Unterrichtskonzept. Individueller Klavierunterricht in Hannover: Klassik, Pop, Theorie & Gehörbildung für alle Altersgruppen.",
+  title: "Unterricht & Konzept | Kinderfreundlicher Klavierunterricht Hannover List",
+  description: "Erfahren Sie mehr über mein Konzept für  Klavierunterricht in Hannover List: Klassik, Pop, Theorie & Gehörbildung für alle Altersgruppen.",
 };
 
 export default function UnterrichtPage() {
@@ -41,11 +41,11 @@ export default function UnterrichtPage() {
 
   return (
     <div className="bg-white dark:bg-zinc-950 transition-colors duration-500">
-      
+
       {/* 1. Philosophical Hero */}
       <section className="relative pt-32 pb-16 lg:pt-48 lg:pb-32 px-4 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-           <div className="absolute top-0 left-1/4 -translate-x-1/2 -mt-20 h-[600px] w-[600px] rounded-full bg-zinc-100 dark:bg-zinc-900/30 blur-3xl opacity-80" />
+          <div className="absolute top-0 left-1/4 -translate-x-1/2 -mt-20 h-[600px] w-[600px] rounded-full bg-zinc-100 dark:bg-zinc-900/30 blur-3xl opacity-80" />
         </div>
 
         <div className="mx-auto max-w-4xl text-center relative z-10">
@@ -66,27 +66,27 @@ export default function UnterrichtPage() {
       <section className="py-12 lg:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            
+
             {/* Image Side - Editorial Style */}
             <div className="relative order-2 lg:order-1">
-               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 shadow-2xl shadow-zinc-200 dark:shadow-none">
-                 <Image
-                    src="/images/lelia-hernandez-klavierunterricht-hannover-mit-schuelerin.webp"
-                    alt="Lelia Hernández beim Klavierunterricht mit einer Schülerin"
-                    fill
-                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                 />
-                 {/* Decorative Overlay Gradient */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
-               </div>
-               
-               {/* Floating Quote Badge */}
-               <div className="absolute -bottom-6 -right-4 md:bottom-12 md:-right-12 max-w-xs p-6 bg-white dark:bg-zinc-900 rounded-xl shadow-xl border border-zinc-100 dark:border-zinc-800">
-                  <p className="text-sm md:text-base font-light italic text-zinc-600 dark:text-zinc-300">
-                    &quot;Es geht nicht darum, perfekt zu spielen. Es geht darum, authentisch zu fühlen.&quot;
-                  </p>
-               </div>
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 shadow-2xl shadow-zinc-200 dark:shadow-none">
+                <Image
+                  src="/images/lelia-hernandez-klavierunterricht-hannover-mit-schuelerin.webp"
+                  alt="Lelia Hernández beim Klavierunterricht mit einer Schülerin"
+                  fill
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {/* Decorative Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+              </div>
+
+              {/* Floating Quote Badge */}
+              <div className="absolute -bottom-6 -right-4 md:bottom-12 md:-right-12 max-w-xs p-6 bg-white dark:bg-zinc-900 rounded-xl shadow-xl border border-zinc-100 dark:border-zinc-800">
+                <p className="text-sm md:text-base font-light italic text-zinc-600 dark:text-zinc-300">
+                  &quot;Es geht nicht darum, perfekt zu spielen. Es geht darum, authentisch zu fühlen.&quot;
+                </p>
+              </div>
             </div>
 
             {/* Text Side */}
@@ -96,12 +96,12 @@ export default function UnterrichtPage() {
               </h2>
               <div className="space-y-6 text-lg font-light text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 <p>
-                  Jede*r Schüler*in ist einzigartig. Deshalb gibt es bei mir keinen &quot;Unterricht von der Stange&quot;. 
+                  Jede*r Schüler*in ist einzigartig. Deshalb gibt es bei mir keinen &quot;Unterricht von der Stange&quot;.
                   Egal ob du Anfänger bist oder schon Erfahrung mitbringst – wir holen dich genau dort ab, wo du stehst.
                 </p>
                 <p>
-                  In meinen Stunden legen wir Wert auf eine entspannte Atmosphäre. Stress und Druck haben hier keinen Platz. 
-                  Stattdessen fördern wir Neugierde. Wir experimentieren mit Klängen, verstehen die Musiktheorie durch Praxis 
+                  In meinen Stunden legen wir Wert auf eine entspannte Atmosphäre. Stress und Druck haben hier keinen Platz.
+                  Stattdessen fördern wir Neugierde. Wir experimentieren mit Klängen, verstehen die Musiktheorie durch Praxis
                   und erarbeiten Stücke, die dir wirklich am Herzen liegen.
                 </p>
                 <p>
@@ -109,17 +109,17 @@ export default function UnterrichtPage() {
                 </p>
               </div>
 
-               <div className="mt-10">
-                 <Link 
-                   href="/kontakt" 
-                   className="inline-flex items-center text-lg font-medium text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
-                 >
-                   Probestunde vereinbaren
-                   <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                   </svg>
-                 </Link>
-               </div>
+              <div className="mt-10">
+                <Link
+                  href="/kontakt"
+                  className="inline-flex items-center text-lg font-medium text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+                >
+                  Probestunde vereinbaren
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
 
           </div>
@@ -130,12 +130,12 @@ export default function UnterrichtPage() {
       <section className="py-24 bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-100 dark:border-zinc-800/50">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-16 md:text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-thin text-zinc-900 dark:text-zinc-50 mb-6">
-                Alles möglich, alles flexibel.
-             </h2>
-             <p className="text-lg font-light text-zinc-500 dark:text-zinc-400">
-               Mein Unterricht richtet sich ganz nach Deinen Lebensumständen.
-             </p>
+            <h2 className="text-3xl md:text-4xl font-thin text-zinc-900 dark:text-zinc-50 mb-6">
+              Alles möglich, alles flexibel.
+            </h2>
+            <p className="text-lg font-light text-zinc-500 dark:text-zinc-400">
+              Mein Unterricht richtet sich ganz nach Deinen Lebensumständen.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -156,42 +156,42 @@ export default function UnterrichtPage() {
         </div>
       </section>
 
-       {/* FAQ / Details Section */}
-       <section className="py-24">
-          <div className="mx-auto max-w-4xl px-4">
-             <div className="rounded-[2rem] bg-zinc-900 dark:bg-zinc-800 p-8 md:p-12 text-center text-white relative overflow-hidden">
-                {/* Decorative Background Pattern */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                
-                <h2 className="relative z-10 text-3xl font-thin mb-8">Bereit loszulegen?</h2>
-                <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-2xl mx-auto mb-12">
-                   <div>
-                      <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Dauer</h4>
-                      <p className="font-light text-lg">30, 45 oder 60 Minuten</p>
-                   </div>
-                   <div>
-                       <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Sprachen</h4>
-                      <p className="font-light text-lg">Deutsch & Spanisch</p>
-                   </div>
-                   <div>
-                       <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Wo</h4>
-                      <p className="font-light text-lg">Hannover (30177) <br/> <span className="text-zinc-500 text-base">oder Online</span></p>
-                   </div>
-                   <div>
-                       <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Preise</h4>
-                      <p className="font-light text-lg">Auf Anfrage</p>
-                   </div>
-                </div>
+      {/* FAQ / Details Section */}
+      <section className="py-24">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="rounded-[2rem] bg-zinc-900 dark:bg-zinc-800 p-8 md:p-12 text-center text-white relative overflow-hidden">
+            {/* Decorative Background Pattern */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-                <Link
-                  href="/kontakt"
-                  className="relative z-10 inline-flex items-center justify-center rounded-full bg-white text-zinc-900 px-8 py-4 font-medium transition-transform hover:scale-105 active:scale-95"
-                >
-                  Schnupperstunde buchen
-                </Link>
-             </div>
+            <h2 className="relative z-10 text-3xl font-thin mb-8">Bereit loszulegen?</h2>
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-2xl mx-auto mb-12">
+              <div>
+                <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Dauer</h4>
+                <p className="font-light text-lg">30, 45 oder 60 Minuten</p>
+              </div>
+              <div>
+                <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Sprachen</h4>
+                <p className="font-light text-lg">Deutsch & Spanisch</p>
+              </div>
+              <div>
+                <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Wo</h4>
+                <p className="font-light text-lg">Hannover (30177) <br /> <span className="text-zinc-500 text-base">oder Online</span></p>
+              </div>
+              <div>
+                <h4 className="text-zinc-400 text-sm font-bold uppercase tracking-wider mb-2">Preise</h4>
+                <p className="font-light text-lg">Auf Anfrage</p>
+              </div>
+            </div>
+
+            <Link
+              href="/kontakt"
+              className="relative z-10 inline-flex items-center justify-center rounded-full bg-white text-zinc-900 px-8 py-4 font-medium transition-transform hover:scale-105 active:scale-95"
+            >
+              Schnupperstunde buchen
+            </Link>
           </div>
-       </section>
+        </div>
+      </section>
 
     </div>
   );

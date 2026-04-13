@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Klavierunterricht Hannover | Lelia Hernández",
-  description: "Professioneller Klavierunterricht in Hannover für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
+  title: "Klavierunterricht Hannover List | Lelia Hernández",
+  description: "Professioneller und kinderfreundlicher Klavierunterricht in Hannover List für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   alternates: {
     canonical: "/",
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    title: "Klavierunterricht Hannover | Lelia Hernández",
+    title: "Kinderfreundlicher Klavierunterricht Hannover List | Lelia Hernández",
     description:
-      "Professioneller Klavierunterricht in Hannover für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
+      "Professioneller und kinderfreundlicher Klavierunterricht in Hannover List für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
     url: "/",
-    siteName: "Lelia Hernández – Klavierunterricht Hannover",
+    siteName: "Lelia Hernández – Klavierunterricht Hannover List",
     images: [
       {
         url: "/images/lelia-hernandez-klavier-hannover.webp",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Klavierunterricht Hannover | Lelia Hernández",
+    title: "Klavierunterricht Hannover List | Lelia Hernández",
     description:
-      "Professioneller Klavierunterricht in Hannover für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
+      "Professioneller und kinderfreundlicher Klavierunterricht in Hannover List für Kinder und Erwachsene. Klassik, Rock & Pop. Jetzt kostenlose Schnupperstunde vereinbaren!",
     images: ["/images/lelia-hernandez-klavier-hannover.webp"],
   },
 };
@@ -67,8 +67,8 @@ const jsonLd = {
     addressCountry: "DE",
   },
   areaServed: {
-    "@type": "City",
-    name: "Hannover",
+    "@type": "Place",
+    name: "Hannover List",
   },
   sameAs: ["https://www.facebook.com/lelia.hernandez.9"],
 };

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Über mich | Lelia Hernández - Klavierunterricht Hannover",
-  description: "Erfahren Sie mehr über Lelia Hernández San Martín, ihre Ausbildung und Erfahrung als Klavierlehrerin und Konzertpianistin.",
+  title: "Über mich | Lelia Hernández - Klavierunterricht Hannover List",
+  description: "Erfahren Sie mehr über Lelia Hernández San Martín, ihre Ausbildung und Erfahrung im kinderfreundlichen Klavierunterricht.",
 };
 
 export default function AboutPage() {
