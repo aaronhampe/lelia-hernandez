@@ -2,6 +2,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Use Node.js 24 LTS (24.22.1 or newer). `.nvmrc` records the tested version;
+the prebuild check rejects older runtimes. Install reproducibly with `npm ci`.
+
+Before deployment run `npm audit`, `npm run build`, then start the production
+server with `npm start -- -H 127.0.0.1 -p 3101` and run `npm run test:smoke`.
+The smoke test checks all eight pages, assets, metadata routes, the legacy
+redirect, and the contact form fields and destination. It does not send a
+message to Formspree. Set `SMOKE_BASE_URL` to check a deployed site.
+
 First, run the development server:
 
 ```bash
